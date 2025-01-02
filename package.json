@@ -1,6 +1,6 @@
 {
 	"name": "sukulent",
-	"version": "1.2017015.0",
+	"version": "1.2025011.1",
 	"author": "pb@drkake.cz",
 	"dependencies": {
 		"jimp": "^0.6.4",
