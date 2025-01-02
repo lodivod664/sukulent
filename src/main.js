@@ -75,7 +75,7 @@ function signRequest(request, certPem) {
 	let doc = new DOMParser().parseFromString(request);
 	removeEmptyTexts(doc.documentElement);
 
-	let suklNs = "http://www.sukl.cz/erp/201704";
+	let suklNs = "http://www.sukl.cz/erp/202501";
 
 	let message = doc.createElementNS(suklNs, "Zprava");
 	function addToMessage(elName, value) {
@@ -85,7 +85,7 @@ function signRequest(request, certPem) {
 		message.appendChild(el);
 	}
 	addToMessage("ID_Zpravy", uuidv4());
-	addToMessage("Verze", "201704E");
+	addToMessage("Verze", "202501A");
 	addToMessage("Odeslano", new Date().toJSON());
 	addToMessage("SW_Klienta", "Sukulent0000");
 
@@ -198,7 +198,7 @@ async function saveQrCode(request, reply) {
 	platnostDo = platnostDo.replace(/-/g, "");
 
 	let replyDoc = new DOMParser().parseFromString(reply);
-	let replyNs = "http://www.sukl.cz/erp/201704";
+	let replyNs = "http://www.sukl.cz/erp/202501";
 	let elZPD = replyDoc.getElementsByTagNameNS(replyNs, "ZalozeniPredpisuOdpoved")[0];
 	if (elZPD) {
 		console.info("Ukládám QR...");
